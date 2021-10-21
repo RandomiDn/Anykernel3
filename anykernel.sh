@@ -6,13 +6,14 @@
 properties() { '
 do.devicecheck=1
 do.modules=0
-do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=riva
-device.name2=rolex
-device.name3=rova
-device.name4=mi8937
+device.name1=miatoll
+device.name2=curtana
+device.name3=excalibur
+device.name4=gram
+device.name5=joyeuse
+device.name6=sm7125
 supported.versions=10-11
 supported.patchlevels=
 '; } # end properties
