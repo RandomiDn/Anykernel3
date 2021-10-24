@@ -10,8 +10,8 @@ do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=RMX2061
-device.name2=
+device.name1=riva
+device.name2=msm8917
 supported.versions=10-11
 supported.patchlevels=
 '; } # end properties
