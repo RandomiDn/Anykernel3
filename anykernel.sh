@@ -4,16 +4,14 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
+kernel.string=iDn @Arrayfs
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=miatoll
-device.name2=curtana
-device.name3=excalibur
-device.name4=gram
-device.name5=joyeuse
+device.name1=Ido
+device.name2=msm8937
 supported.versions=10-11
 supported.patchlevels=
 '; } # end properties
