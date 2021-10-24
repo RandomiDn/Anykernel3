@@ -10,8 +10,8 @@ do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=land
-device.name2=msm8937
+device.name1=excalibur
+device.name2=RMX2061
 supported.versions=10-11
 supported.patchlevels=
 '; } # end properties
