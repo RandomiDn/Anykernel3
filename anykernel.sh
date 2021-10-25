@@ -4,14 +4,16 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=iDn @Arrayfs
+kernel.string=kernel by @Arrayfs
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=rova
-device.name2=msm8937
+device.name1=riva
+device.name2=rolex
+device.name3=msm8917
+device.name4=msm8937
 supported.versions=10-11
 supported.patchlevels=
 '; } # end properties
