@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=kernel by @Arrayfs
+kernel.string=Rid Kernel 4.9 Supports 8.1.0 by @Arrayfs
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -12,9 +12,9 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=riva
 device.name2=rolex
-device.name3=msm8917
+device.name3=rova
 device.name4=msm8937
-supported.versions=10-11
+supported.versions=8.1.0 - 11
 supported.patchlevels=
 '; } # end properties
 
@@ -34,26 +34,28 @@ ramdisk_compression=auto;
 set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
-
-## AnyKernel boot install
+## AnyKernel install
 dump_boot;
 
+patch_cmdline androidboot.usbconfigfs androidboot.usbconfigfs=true
+
 write_boot;
-## end boot install
+## end install
 
+# Check for 4.9 support
+umount /vendor
+mount -o ro /dev/block/bootdevice/by-name/cust /vendor
+if [ -f /vendor/build.prop ]; then
+	if [ -f /vendor/etc/vintf/manifest.xml ] ; then
+		grep "target-level=\"2\"" /vendor/etc/vintf/manifest.xml
+	elif [ -f /vendor/manifest.xml ] ; then
+		grep "target-level=\"2\"" /vendor/manifest.xml
+	else
+		false
+	fi
 
-# shell variables
-#block=vendor_boot;
-#is_slot_device=1;
-#ramdisk_compression=auto;
-
-# reset for vendor_boot patching
-#reset_ak;
-
-
-## AnyKernel vendor_boot install
-#split_boot; # skip unpack/repack ramdisk since we don't need vendor_ramdisk access
-
-#flash_boot;
-## end vendor_boot install
-
+	if [ $? -eq 0 ]; then
+		ui_print "WARNING: Your vendor doesn't seems like supporting kernel 4.9."
+	fi
+fi
+umount /vendor
