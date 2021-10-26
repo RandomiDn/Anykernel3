@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Rid Kernel 4.9 Supports 8.1.0 by @Arrayfs
+kernel.string=iDn Kernel 4.9 Supports 8.1 by @Arrayfs
 do.devicecheck=1
 do.modules=0
 do.systemless=1
