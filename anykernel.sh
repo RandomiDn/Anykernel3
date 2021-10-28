@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=iDn Kernel 4.9 Supports 8.1 by @Arrayfs
+kernel.string=iDn Kernel 4.9 Supports 11 by @Arrayfs
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -14,7 +14,7 @@ device.name1=riva
 device.name2=rolex
 device.name3=rova
 device.name4=msm8937
-supported.versions=8.1.0 - 11
+supported.versions=11 - 12
 supported.patchlevels=
 '; } # end properties
 
